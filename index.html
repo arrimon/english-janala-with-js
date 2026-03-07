@@ -134,34 +134,42 @@
         </div>
     </section>
     
+   
+
+
     <!-- Learn Vocabulary Section -->
     <section class="overflow-hidden">
         <div class="flex flex-col md:flex-row justify-center items-center my-10 mx-6 md:mx-20 gap-10 rounded-md bg-gray-100">
+            <!-- Spinner -->
+            <div id="spinner-container" class="hidden flex justify-center items-center py-20">
+                <span class="loading loading-bars loading-xl text-primary"></span>
+            </div>
+
             <div id="word-container" class="p-6 grid grid-cols-1 md:grid-cols-3 gap-5 rounded-full w-full">
                 <div class="text-center space-y-5 col-span-full py-10">
                     <p class="font-bangla text-[#79716B] ">আপনি এখনো কোন Lesson Select করেন নি</p>
                     <h2 class="font-bangla text-[#292524] text-4xl">একটি Lesson Select করুন।</h2>
                 </div>
-
-                <!-- Img -->
-                <!-- <div class="col-span-full py-16 flex flex-col items-center justify-center text-center space-y-5">
-        
-                    <img src="../assets/alert-error.png" alt="Error Alert" 
-                        class="w-full max-w-[150px] md:max-w-[250px] object-contain mx-auto">
-                    
-                    <div class="space-y-2">
-                        <p class="font-bangla text-[#79716B] text-lg">
-                            এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
-                        </p>
-                        <h2 class="font-bangla text-[#292524] text-3xl md:text-4xl font-bold">
-                            নেক্সট Lesson এ যান
-                        </h2>
-                    </div>
-                </div> -->
             </div>
-            
         </div>
     </section>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="details-container" class="space-y-4">
+                
+            </div>
+            
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-sm">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
     <!-- Connect Scripts -->
     <script src="./scripts/index.js"></script>
