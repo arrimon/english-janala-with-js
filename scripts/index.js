@@ -13,6 +13,13 @@ const manageSpinner = (status) => {
     }
 };
 
+// Pronunce words
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 // Lessons Data load function
 const loadLessonData = async () => {
     const urls = 'https://openapi.programming-hero.com/api/levels/all';
@@ -158,7 +165,7 @@ const displayLevelWord = (words) => {
                             <i class="fa-solid fa-circle-info text-xl"></i>
                         </button>
                         
-                        <button class="btn btn-ghost bg-[#e8f4ff] hover:bg-[#d0e9ff] p-3 min-h-0 h-auto rounded-md transition-colors" title="Listen">
+                        <button onclick="pronounceWord('${words.word}')" class="btn btn-ghost bg-[#e8f4ff] hover:bg-[#d0e9ff] p-3 min-h-0 h-auto rounded-md transition-colors" title="Listen">
                             <i class="fa-solid fa-volume-high text-xl"></i>
                         </button>
                     </div>
@@ -202,9 +209,11 @@ const displayLesson = (lesson) => {
 loadLessonData()
 
 document.getElementById('btn-search').addEventListener('click', ()=>{
+    // remove active btn
+    removeActive();
     const input = document.getElementById('input-search');
     const searchValue = input.value.trim().toLowerCase();
-    console.log(searchValue)
+    // console.log(searchValue)
 
     fetch('https://openapi.programming-hero.com/api/words/all')
         .then(res => res.json())
