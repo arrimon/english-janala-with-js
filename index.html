@@ -27,35 +27,37 @@
 <body>
     <!-- Header with Navbar -->
     <header>
-        <div class="navbar bg-base-100 shadow-sm px-3 md:px-20">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                    </div>
-                    <ul
-                        tabindex="-1"
-                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a href="" class=""><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
-                        <li><a href="" class=""><i class="fa-solid fa-book-open"></i> Learn</a></li>
-                        <li><a href="" class=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
-                    </ul>
+    <div class="navbar bg-base-100 shadow-sm px-3 md:px-20">
+        <div class="navbar-start">
+            <a href="" class="flex items-center gap-1">
+                <span class="text-lg font-bold">English</span>
+                <img src="./assets/logo.png" alt="" class="h-8">
+                <span class="font-bangla text-lg font-semibold">জানালা</span>
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <ul class="menu menu-horizontal px-1 gap-3 hidden lg:flex">
+                <li><a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+                <li><a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                <li><a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+            </ul>
+
+            <div class="dropdown dropdown-end lg:hidden">
+                <div tabindex="0" role="button" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
                 </div>
-                <a href="" class="flex items-center gap-1">
-                    <span class="text-lg font-bold">English</span>
-                    <img src="./assets/logo.png" alt="">
-                    <span class="font-bangla text-lg font-semibold">জানালা</span>
-                </a>
-            </div>
-            <div class="navbar-end hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 gap-3">
-                    <li><a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
-                    <li><a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn</a></li>
-                    <li><a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <li><a href=""><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+                    <li><a href=""><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                    <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
                 </ul>
             </div>
         </div>
-    </header>
+    </div>
+</header>
     
     <!-- Hero Section -->
     <section class="overflow-hidden">
@@ -134,7 +136,32 @@
         </div>
     </section>
     
-   
+    <!-- Search Section -->
+    <section>
+        <div class="flex flex-col md:flex-row justify-center items-center my-10 mx-6 md:mx-20 gap-10 rounded-md">
+            <div class="join">
+                <div>
+                    <label class="input validator join-item">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        stroke-width="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                        >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input id="input-search" type="text" placeholder="" required />
+                    </label>
+                    <div class="validator-hint hidden">Search vocabulary now</div>
+                </div>
+                <button id="btn-search" class="btn btn-primary join-item">Search</button>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Learn Vocabulary Section -->
